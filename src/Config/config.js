@@ -31,3 +31,16 @@ export function getFetchInterval()
     console.log(`Fetch Interval set to ${fetchIntervalInMilliseconds} Ms.`);
     return fetchIntervalInMilliseconds;    
 }
+
+export function getPriceOscilationPercentage()
+{
+    const priceOscilationPercentage = nconf.get('priceOscilationPercentage');
+    if (!priceOscilationPercentage)
+    {
+      console.error('Invalid price oscilation percentage configuration');
+      return null;
+    }
+    const priceOscilation = priceOscilationPercentage / 100;
+    console.log(`Price oscilation set to ${priceOscilation}`);
+    return priceOscilation;
+}

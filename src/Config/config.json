@@ -1,4 +1,5 @@
 {
     "currencyPairs": "BTC-USD,UPXAU-USD",
-    "fetchIntervalInSeconds" : 5
+    "fetchIntervalInSeconds" : 5,
+    "priceOscilationPercentage" : 0.01
 }

@@ -1,8 +1,9 @@
 
 export class RateTracker 
 {
-    constructor(ticker){
+    constructor(ticker, priceOscilation){
         this.ticker = ticker;
+        this.priceOscilation = priceOscilation;
     }
 
     process(lastPrice)
@@ -12,7 +13,7 @@ export class RateTracker
             this.basePrice = lastPrice;
         }
 
-        const percentageDifference = this.basePrice * 0.0001;
+        const percentageDifference = this.basePrice * this.priceOscilation;
         const priceChange = lastPrice - this.basePrice;
         const absolutePriceChange = Math.abs(lastPrice - this.basePrice);
         var enoughChange = absolutePriceChange >= percentageDifference;

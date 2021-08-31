@@ -1,4 +1,4 @@
-# pricebot
+# Pricebot
 Uphold Bot - Assessment Challenge - Price oscilation bot
 
 ## Requirements

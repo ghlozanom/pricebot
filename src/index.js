@@ -1,10 +1,15 @@
 
 import { getRateFor } from "./Helpers/rate-retriever.js";
 import { RateTracker } from "./Helpers/rate-tracker.js";
-import { getCurrencyPairs, getFetchInterval } from "./Config/config.js";
+import { 
+  getCurrencyPairs,
+  getFetchInterval,
+  getPriceOscilationPercentage
+ } from "./Config/config.js";
 
-var currencyPairs = getCurrencyPairs();
-var fetchInterval = getFetchInterval();
+const currencyPairs = getCurrencyPairs();
+const fetchInterval = getFetchInterval();
+const priceOscilationPercentage = getPriceOscilationPercentage();
 
 if (!currencyPairs || !fetchInterval)
 {
@@ -12,11 +17,11 @@ if (!currencyPairs || !fetchInterval)
   process.exit(1);
 }
 
-var currencyPairsRateTrackers = [];
+const currencyPairsRateTrackers = [];
 for (const currencyPair of currencyPairs)
 {
   console.log(`Currency pair: ${currencyPair}`);
-  currencyPairsRateTrackers.push(new RateTracker(currencyPair));
+  currencyPairsRateTrackers.push(new RateTracker(currencyPair, priceOscilationPercentage));
 }
 
 const intervalObj = setInterval(async () => {
