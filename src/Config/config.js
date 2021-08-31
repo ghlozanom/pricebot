@@ -37,7 +37,7 @@ function getConfig()
   }
   const priceOscilation = priceOscilationPercentage / 100;
   console.log(`Price oscilation set to ${priceOscilation}`);
-  config.priceOscilationPercentage = priceOscilation;
+  config.priceOscilation = priceOscilation;
 
   return config;
 }
