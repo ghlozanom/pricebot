@@ -1,18 +1,16 @@
 
 import { getRateFor } from "./Helpers/rate-retriever.js";
 import { RateTracker } from "./Helpers/rate-tracker.js";
-import nconf from 'nconf';
+import { getCurrencyPairs } from "./Config/config.js";
 
-// Reading first config from params, then fron environment and last from config.json
-nconf.argv().env('__').file('src/Config/config.json');
+var currencyPairs = getCurrencyPairs();
 
-var currencyPairsParam = nconf.get('currencyPairs');
-if (!currencyPairsParam)
+if (!currencyPairs)
 {
   console.log('No currency pairs defined, nothing to do');
   process.exit(0);
 }
-var currencyPairs = currencyPairsParam.split(',');
+
 var currencyPairsRateTrackers = [];
 for (const currencyPair of currencyPairs)
 {
