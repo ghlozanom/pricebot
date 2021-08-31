@@ -10,10 +10,24 @@ nconf.argv().env('__').file('src/Config/config.json');
 
 export function getCurrencyPairs()
 {
-    var currencyPairsParam = nconf.get('currencyPairs');
+    const currencyPairsParam = nconf.get('currencyPairs');
     if (!currencyPairsParam)
     {
+      console.error('Invalid currencyPairs configuration');
       return null;
     }
     return currencyPairsParam.split(',');    
+}
+
+export function getFetchInterval()
+{
+    const fetchIntervalInSeconds = nconf.get('fetchIntervalInSeconds');
+    if (!fetchIntervalInSeconds)
+    {
+      console.error('Invalid fetch interval configuration');
+      return null;
+    }
+    const fetchIntervalInMilliseconds = fetchIntervalInSeconds * 1000;
+    console.log(`Fetch Interval set to ${fetchIntervalInMilliseconds} Ms.`);
+    return fetchIntervalInMilliseconds;    
 }

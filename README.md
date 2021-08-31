@@ -16,7 +16,8 @@ The currencies rate tracker bot can be configured from command line, environment
 
 Arguments are:
 - **currencyPairs**
+- **fetchIntervalInSeconds**
 
-To run with **currencyPairs** as argument:
+To run with **currencyPairs** as argument, try:
 
 Run `npm start -- --currencyPairs="UPXAU-USD"`.

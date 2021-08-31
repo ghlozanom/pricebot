@@ -1,3 +1,4 @@
 {
-    "currencyPairs": "BTC-USD,UPXAU-USD"
+    "currencyPairs": "BTC-USD,UPXAU-USD",
+    "fetchIntervalInSeconds" : 5
 }
