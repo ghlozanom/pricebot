@@ -39,7 +39,7 @@
        url: `${process.env.BASE_URL}/v0/ticker/${ticker}`
      });
  
-     return response.data;
+     return response.data.ask;
    } catch (error) {
      formatError(error);
    }
