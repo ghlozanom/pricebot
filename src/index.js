@@ -2,16 +2,17 @@
 import { getRateFor } from "./Helpers/rate-retriever.js";
 import { RateTracker } from "./Helpers/rate-tracker.js";
 
-const rateTracker = new RateTracker();
+const btcUsdTracker = new RateTracker('BTC-USD');
+const upXauUsdTracker = new RateTracker('UPXAU-USD');
 
 async function getRateInIntervals(ticker) 
 {
   try {
-    
-    const btcUsdRate = await getRateFor(ticker);
 
-    console.log(`BTC-USD rate: ${btcUsdRate.ask} at ${new Date().toISOString()}`);
-    rateTracker.process(btcUsdRate.ask);
+    const tickerRate = await getRateFor(ticker);
+
+    console.log(`${ticker} rate: ${tickerRate.ask} at ${new Date().toISOString()}`);
+    return tickerRate.ask;
 
   } catch (error) {
       console.log('Error while calculating price oscilation, please try again');
@@ -20,6 +21,7 @@ async function getRateInIntervals(ticker)
 }
 
 // lets run this every 5 seconds
-const intervalObj = setInterval(() => {
-  getRateInIntervals('BTC-USD');
+const intervalObj = setInterval(async () => {
+  btcUsdTracker.process(await getRateInIntervals('BTC-USD'));
+  upXauUsdTracker.process(await getRateInIntervals('UPXAU-USD'));
 }, 1000 * 5);

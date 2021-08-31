@@ -1,6 +1,10 @@
 
 export class RateTracker 
 {
+    constructor(ticker){
+        this.ticker = ticker;
+    }
+
     process(lastPrice)
     {
         if (!this.basePrice)
@@ -15,7 +19,7 @@ export class RateTracker
         
         if ( enoughChange )
         {
-            console.log('Price changed');
+            console.log(`${this.ticker} price changed!!`);
         }
     }
 }
