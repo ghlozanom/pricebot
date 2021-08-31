@@ -12,4 +12,4 @@ Uphold Bot - Assessment Challenge - Price oscilation bot
 
 ## Run
 
-Run `node index.js`.
+Run `npm start`.

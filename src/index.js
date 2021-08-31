@@ -1,5 +1,5 @@
 
-import { getRateFor } from "./rate-retriever.js";
+import { getRateFor } from "./Helpers/rate-retriever.js";
 
 (async () => {
 
