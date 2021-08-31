@@ -1,0 +1,28 @@
+{
+  "name": "pricebot",
+  "version": "1.0.0",
+  "description": "Uphold Bot - Assessment Challenge - Price oscilation bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghlozanom/pricebot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghlozanom/pricebot/issues"
+  },
+  "homepage": "https://github.com/ghlozanom/pricebot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
