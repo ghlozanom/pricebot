@@ -19,13 +19,17 @@ Arguments are:
 - **currencyPairs**
 - **fetchIntervalInSeconds**
 
+If you run without any argument, the values defined in `config.json` will be used. To run it with predefined config values, try:
+
+Run `npm start`
+
 To run with **currencyPairs** as argument, try:
 
 Run `npm start -- --currencyPairs="UPXAU-USD"`.
 
 ## Docker Compose
 
-This app is configured to run with Docker compose. It will build the node app and run a mongo image to which the app will connect to. To do it:
+This app is configured to run with Docker compose. It will build the node app and run a mongo image to which the app will connect to. To do it, open a terminal in the root folder and:
 
 - Run `docker-compose up --build`
 
