@@ -1,0 +1,15 @@
+version: '3'
+services:
+  node:
+    restart: unless-stopped
+    build: .
+
+  mongo:
+    image: mongo
+    restart: always
+    command: mongod --port 27317
+    ports:
+      - 27317:27317
+networks:
+    botnet:
+        driver: bridge

@@ -35,9 +35,20 @@ function getConfig()
     config.error += 'Invalid price oscilation percentage configuration.\n';
     config.isValid = false;
   }
-  const priceOscilation = priceOscilationPercentage / 100;
-  console.log(`Price oscilation set to ${priceOscilation}`);
-  config.priceOscilation = priceOscilation;
+  else
+  {
+    const priceOscilation = priceOscilationPercentage / 100;
+    console.log(`Price oscilation set to ${priceOscilation}`);
+    config.priceOscilation = priceOscilation;
+  }
+
+  const dbUrl = nconf.get('dbUrl');
+  if (!dbUrl)
+  {
+    config.error += 'Invalid db connection string configuration.\n';
+    config.isValid = false;
+  }  
+  config.dbUrl = dbUrl;
 
   return config;
 }

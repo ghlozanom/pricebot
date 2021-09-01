@@ -6,7 +6,7 @@ export class RateTracker
         this.priceOscilation = priceOscilation;
     }
 
-    process(lastPrice)
+    async process(lastPrice, TickerRate)
     {
         if (!this.basePrice)
         {
@@ -23,6 +23,11 @@ export class RateTracker
         {
             console.log(`${this.ticker} price changed, from ${this.basePrice} to ${lastPrice} (${priceChange}, ${100*priceChange/this.basePrice}% ) at ${new Date().toISOString()}`);
             this.basePrice = lastPrice;
+            await new TickerRate({
+                price: lastPrice,
+                ticker: this.ticker,
+                time: Date.now()
+            }).save();
             return true;    // just sending this for testing
         }
 

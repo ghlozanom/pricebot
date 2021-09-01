@@ -1,5 +1,6 @@
 {
     "currencyPairs": "BTC-USD,UPXAU-USD",
     "fetchIntervalInSeconds" : 5,
-    "priceOscilationPercentage" : 0.01
+    "priceOscilationPercentage" : 0.01,
+    "dbUrl" : "mongodb://localhost:27017/pricebot"
 }

@@ -23,10 +23,9 @@ To run with **currencyPairs** as argument, try:
 
 Run `npm start -- --currencyPairs="UPXAU-USD"`.
 
-## Docker
+## Docker Compose
 
-This app is configured to run with Docker. To do it:
+This app is configured to run with Docker compose. It will build the node app and run a mongo image to which the app will connect to. To do it:
 
-- To build the image, from the root folder of the app (the one containing the `Dockerfile`) run `docker build . -t <your username>/pricebot`
-- To run the image, run `docker run <your username>/pricebot`. There is no port exposed so far, and it runs not detached in order to see the output.
+- Run `docker-compose up --build`
 
