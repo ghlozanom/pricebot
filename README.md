@@ -4,6 +4,7 @@ Uphold Bot - Assessment Challenge - Price oscilation bot
 ## Requirements
 
 - Node.js v14.0 or later
+- Docker
 
 ## Setup
 
@@ -21,3 +22,11 @@ Arguments are:
 To run with **currencyPairs** as argument, try:
 
 Run `npm start -- --currencyPairs="UPXAU-USD"`.
+
+## Docker
+
+This app is configured to run with Docker. To do it:
+
+- To build the image, from the root folder of the app (the one containing the `Dockerfile`) run `docker build . -t <your username>/pricebot`
+- To run the image, run `docker run <your username>/pricebot`. There is no port exposed so far, and it runs not detached in order to see the output.
+
